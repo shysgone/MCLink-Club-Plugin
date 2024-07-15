@@ -1,0 +1,13 @@
+name: Club
+version: '1.0-SNAPSHOT'
+main: org.mclink.mclinkclub.Club
+api-version: '1.20'
+
+commands:
+  club:
+    description: Club Command
+    aliases: ['club', 'c']
+  vip:
+    description: Vip Command
+  test:
+    description: Test Command
