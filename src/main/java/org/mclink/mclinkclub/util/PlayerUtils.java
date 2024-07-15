@@ -84,4 +84,7 @@ public class PlayerUtils {
     public static void teleport(Player player, World world, double x, double y, double z, PlayerTeleportEvent.TeleportCause cause) {
         player.teleport(new Location(world, x, y, z), cause);
     }
+
+    public static void playSound(Player player, Sound sound) {
+    }
 }

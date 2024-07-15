@@ -1,12 +1,12 @@
 package org.mclink.mclinkclub.commands;
 
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
 import org.mclink.mclinkclub.club.CommandMenus;
+import org.mclink.mclinkclub.enums.ArmorStandEnum;
 import org.mclink.mclinkclub.util.CC;
 import org.mclink.mclinkclub.util.PlayerUtils;
 
@@ -15,6 +15,15 @@ import java.util.Arrays;
 public class ClubCommand implements CommandExecutor {
 
     public static ClubCommand clubCommand;
+
+    public static ArmorStandEnum clubStand = new ArmorStandEnum("&d&lCLUB", "&7[MAIN CLUB COMMANDS]",
+            "club", Material.GRASS_BLOCK, Sound.BLOCK_NOTE_BLOCK_PLING);
+
+    public static ArmorStandEnum adminStand = new ArmorStandEnum("&c&lADMIN", "&7[MAIN ADMIN COMMANDS]",
+            "admin", Material.COMMAND_BLOCK, Sound.BLOCK_NOTE_BLOCK_PLING);
+
+    public static ArmorStandEnum playerStand = new ArmorStandEnum("&a&lPLAYER", "&7[MAIN PLAYER COMMANDS]",
+            "player", Material.COAL_BLOCK, Sound.BLOCK_NOTE_BLOCK_PLING);
 
 
 
@@ -48,7 +57,14 @@ public class ClubCommand implements CommandExecutor {
                     }
 
                     if (args[0].equalsIgnoreCase("test")) {
-
+                        TextDisplay text = player.getWorld().spawn(player.getLocation(), TextDisplay.class);
+                        text.setText("text");
+                        //text.setBackgroundColor(Color.BLUE);
+                        text.setCustomName("test 2");
+                        text.setCustomNameVisible(true);
+                        text.setBillboard(Display.Billboard.CENTER);
+                        text.setGlowing(true);
+                        text.setGlowColorOverride(Color.RED);
                         /*ArmorStand armorStand = (ArmorStand) player.getWorld().spawnEntity(player.getLocation().add(1.5, 0, 3), EntityType.ARMOR_STAND);
                         armorStand.setGlowing(true);
                         armorStand.setVisible(false);
@@ -60,7 +76,9 @@ public class ClubCommand implements CommandExecutor {
                 case 2:
                     if(args[0].equalsIgnoreCase("test") && args[1].equalsIgnoreCase("club")) {
                         try {
-                            BlockDisplay clubBlock = player.getWorld().spawn(player.getLocation().add(1.5, 1, -0.5), BlockDisplay.class);
+                            clubStand.addArmorStand(player);
+
+                            /*BlockDisplay clubBlock = player.getWorld().spawn(player.getLocation().add(1.5, 1, -0.5), BlockDisplay.class);
                             clubBlock.setBlock(Bukkit.createBlockData(Material.GRASS_BLOCK));
                             clubBlock.setBillboard(Display.Billboard.FIXED);
 
@@ -76,19 +94,19 @@ public class ClubCommand implements CommandExecutor {
                             clubStand.setGlowing(false);
                             clubStand.setVisible(false);
                             clubStand.setCustomNameVisible(true);
-                            clubStand.setCustomName(CC.translate("&d&lCLUB"));
+                            clubStand.setCustomName(CC.translate("CLUB"));
 
                             ArmorStand adminStand = (ArmorStand) player.getWorld().spawnEntity(player.getLocation().add(0, 0, 0), EntityType.ARMOR_STAND);
                             adminStand.setGlowing(false);
                             adminStand.setVisible(false);
                             adminStand.setCustomNameVisible(true);
-                            adminStand.setCustomName(CC.translate("&c&lADMIN"));
+                            adminStand.setCustomName(CC.translate("ADMIN"));
 
                             ArmorStand playerStand = (ArmorStand) player.getWorld().spawnEntity(player.getLocation().add(-2, 0, 0), EntityType.ARMOR_STAND);
                             playerStand.setGlowing(false);
                             playerStand.setVisible(false);
                             playerStand.setCustomNameVisible(true);
-                            playerStand.setCustomName(CC.translate("&e&lPLAYER"));
+                            playerStand.setCustomName(CC.translate("PLAYER"));*/
 
                         } catch (Throwable e) {
                             player.sendMessage("Error: " + e.getMessage());
