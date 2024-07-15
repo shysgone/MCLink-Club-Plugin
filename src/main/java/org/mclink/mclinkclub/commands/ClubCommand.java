@@ -53,7 +53,7 @@ public class ClubCommand implements CommandExecutor {
                     }
 
                     if (args[0].equalsIgnoreCase("test")) {
-
+                        //test stuff
                     }
                     break;
                 case 2:

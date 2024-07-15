@@ -6,6 +6,10 @@ import org.bukkit.entity.*;
 import org.mclink.mclinkclub.util.CC;
 import org.mclink.mclinkclub.util.PlayerUtils;
 
+//TODO: PLACING SYSTEM
+// ADD A SYSTEM WHERE THE ARMOR STANDS ARE EVENLY SPACED BETWEEN EACH OTHER
+// THEY WILL BE IN AN ARRAY OR SOMETHING AND ADD +1-2 BLOCKS SPACE IN BETWEEN
+// EACH OTHER, THIS WILL BE WEIRD TO DO BUT IT WILL BE OKAY XOXOXOXO
 public class ArmorStandEnum {
     private String name;
     private String description;
