@@ -1,22 +1,13 @@
 package org.mclink.mclinkclub.listeners;
 
+import jdk.internal.classfile.ClassBuilder;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.Particle;
-import org.bukkit.Sound;
 import org.bukkit.entity.*;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.entity.EntityDamageEvent;
-import org.bukkit.event.player.PlayerArmorStandManipulateEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
-import org.bukkit.util.Vector;
 import org.mclink.mclinkclub.commands.ClubCommand;
-import org.mclink.mclinkclub.enums.ArmorStandEnum;
-import org.mclink.mclinkclub.util.CC;
 import org.mclink.mclinkclub.util.PlayerUtils;
-import org.w3c.dom.Text;
 
 import java.util.Objects;
 
@@ -25,26 +16,28 @@ public class OnClickListener implements Listener {
     @EventHandler
     public void onClick(PlayerInteractAtEntityEvent event) {
         Player player = event.getPlayer();
-        Entity blockClicked = event.getRightClicked();
+
 
         if (event.getRightClicked().getType().equals(EntityType.ARMOR_STAND)) {
             switch (ClubCommand.clubStand.getId()) {
                 case "club":
-                    PlayerUtils.sendMessage(player, "&7&oClicked club");
                     PlayerUtils.playSound(player, ClubCommand.clubStand.getSound(), 1, 6);
                     removeEntities();
+                    ClubCommand.clubStand.placeArmorStands(player, 5);
                     break;
                 case "admin":
-                    PlayerUtils.sendMessage(player, "&7&oClicked admin");
-                    PlayerUtils.playSound(player, ClubCommand.clubStand.getSound(), 1, 6);
+                    PlayerUtils.playSound(player, ClubCommand.adminStand.getSound(), 1, 6);
                     removeEntities();
+                    ClubCommand.adminStand.placeArmorStands(player, 3);
                     break;
                 case "player":
-                    PlayerUtils.sendMessage(player, "&7&oClicked player");
-                    PlayerUtils.playSound(player, ClubCommand.clubStand.getSound(), 1, 6);
+                    PlayerUtils.playSound(player, ClubCommand.playerStand.getSound(), 1, 6);
                     removeEntities();
+                    ClubCommand.playerStand.placeArmorStands(player, 7);
                     break;
             }
+
+            PlayerUtils.sendMessage(player, "Clicked on " + ClubCommand.clubStand.getId());
         }
     }
 

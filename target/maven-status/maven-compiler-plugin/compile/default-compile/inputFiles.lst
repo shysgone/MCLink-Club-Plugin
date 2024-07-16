@@ -1,5 +1,11 @@
-C:\Plugins\MCLink-Club\src\main\java\org\mclink\mclinkclub\commands\ClubCommand.java
-C:\Plugins\MCLink-Club\src\main\java\org\mclink\mclinkclub\util\CC.java
-C:\Plugins\MCLink-Club\src\main\java\org\mclink\mclinkclub\util\PlayerUtils.java
-C:\Plugins\MCLink-Club\src\main\java\org\mclink\mclinkclub\commands\VipCommand.java
-C:\Plugins\MCLink-Club\src\main\java\org\mclink\mclinkclub\Club.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/objects/ArmorStand.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/util/DefaultFontInfo.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/util/PlayerUtils.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/commands/VipCommand.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/club/CommandMenus.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/util/CC.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/util/CenterText.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/commands/ClubCommand.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/Club.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/listeners/OnClickListener.java
+/Users/TomekS/IdeaProjects/MCLink-Club-Plugin/src/main/java/org/mclink/mclinkclub/commands/TestCommand.java

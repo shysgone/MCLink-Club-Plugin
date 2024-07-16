@@ -6,23 +6,20 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.*;
 import org.mclink.mclinkclub.club.CommandMenus;
-import org.mclink.mclinkclub.enums.ArmorStandEnum;
-import org.mclink.mclinkclub.util.CC;
+import org.mclink.mclinkclub.objects.ArmorStandObject;
 import org.mclink.mclinkclub.util.PlayerUtils;
-
-import java.util.Arrays;
 
 public class ClubCommand implements CommandExecutor {
 
     public static ClubCommand clubCommand;
 
-    public static ArmorStandEnum clubStand = new ArmorStandEnum("&d&lCLUB", "&7[MAIN CLUB COMMANDS]",
+    public static ArmorStandObject clubStand = new ArmorStandObject("&d&lCLUB", "&7[MAIN CLUB COMMANDS]",
             "club", Material.GRASS_BLOCK, Sound.BLOCK_NOTE_BLOCK_PLING);
 
-    public static ArmorStandEnum adminStand = new ArmorStandEnum("&c&lADMIN", "&7[MAIN ADMIN COMMANDS]",
+    public static ArmorStandObject adminStand = new ArmorStandObject("&c&lADMIN", "&7[MAIN ADMIN COMMANDS]",
             "admin", Material.COMMAND_BLOCK, Sound.BLOCK_NOTE_BLOCK_PLING);
 
-    public static ArmorStandEnum playerStand = new ArmorStandEnum("&a&lPLAYER", "&7[MAIN PLAYER COMMANDS]",
+    public static ArmorStandObject playerStand = new ArmorStandObject("&a&lPLAYER", "&7[MAIN PLAYER COMMANDS]",
             "player", Material.COAL_BLOCK, Sound.BLOCK_NOTE_BLOCK_PLING);
 
 
@@ -54,12 +51,15 @@ public class ClubCommand implements CommandExecutor {
 
                     if (args[0].equalsIgnoreCase("test")) {
                         //test stuff
+
                     }
                     break;
                 case 2:
                     if(args[0].equalsIgnoreCase("test") && args[1].equalsIgnoreCase("club")) {
                         try {
                             clubStand.addArmorStand(player);
+                            adminStand.addArmorStand(player);
+                            playerStand.addArmorStand(player);
                         } catch (Throwable e) {
                             player.sendMessage("Error: " + e.getMessage());
                         }

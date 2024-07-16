@@ -1,12 +1,1 @@
-org\mclink\mclinkclub\commands\VipCommand.class
-org\mclink\mclinkclub\util\CenterText.class
-org\mclink\mclinkclub\util\PlayerUtils.class
-org\mclink\mclinkclub\util\CC.class
-org\mclink\mclinkclub\util\CC$1.class
-org\mclink\mclinkclub\util\DefaultFontInfo.class
-org\mclink\mclinkclub\enums\ArmorStandEnum.class
-org\mclink\mclinkclub\commands\TestCommand.class
-org\mclink\mclinkclub\club\CommandMenus.class
-org\mclink\mclinkclub\Club.class
-org\mclink\mclinkclub\commands\ClubCommand.class
-org\mclink\mclinkclub\listeners\OnClickListener.class
+org/mclink/mclinkclub/objects/ArmorStandObject.class

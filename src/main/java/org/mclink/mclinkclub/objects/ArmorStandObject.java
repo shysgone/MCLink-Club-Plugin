@@ -1,16 +1,16 @@
-package org.mclink.mclinkclub.enums;
+package org.mclink.mclinkclub.objects;
 
 import org.bukkit.*;
-import org.bukkit.block.Block;
 import org.bukkit.entity.*;
 import org.mclink.mclinkclub.util.CC;
-import org.mclink.mclinkclub.util.PlayerUtils;
 
 //TODO: PLACING SYSTEM
 // ADD A SYSTEM WHERE THE ARMOR STANDS ARE EVENLY SPACED BETWEEN EACH OTHER
 // THEY WILL BE IN AN ARRAY OR SOMETHING AND ADD +1-2 BLOCKS SPACE IN BETWEEN
 // EACH OTHER, THIS WILL BE WEIRD TO DO BUT IT WILL BE OKAY XOXOXOXO
-public class ArmorStandEnum {
+
+//
+public class ArmorStandObject {
     private String name;
     private String description;
     private String id;
@@ -19,10 +19,31 @@ public class ArmorStandEnum {
     private Particle particle;
     private TextDisplay txtDisplay;
 
+    public void placeArmorStands(Player player, int numberOfStands) {
+        World world = player.getWorld();
+        Location playerLocation = player.getLocation();
+        double halfWidth = (numberOfStands - 1) * 1.0 / 2;
+
+        // Calculate the starting position
+        Location startLocation = playerLocation.clone().add(-halfWidth, 0, 1);
+
+        for (int i = 0; i < numberOfStands; i++) {
+            // Calculate the position for this stand
+            Location standLocation = startLocation.clone().add(i, 0, 0);
+
+            // Spawn the armor stand
+            ArmorStand armorStand = world.spawn(standLocation, ArmorStand.class);
+            armorStand.setCustomName("Stand " + (i + 1));
+            armorStand.setCustomNameVisible(true);
+            armorStand.setGlowing(true);
+        }
+    }
+
+
     public void addArmorStand(Player player, String name, String description, Material block, Sound sound) {
         try {
 
-            ArmorStand armorStand = (ArmorStand) player.getWorld().spawnEntity(player.getLocation(), EntityType.ARMOR_STAND);
+            org.bukkit.entity.ArmorStand armorStand = (org.bukkit.entity.ArmorStand) player.getWorld().spawnEntity(player.getLocation(), EntityType.ARMOR_STAND);
             armorStand.setGlowing(false);
             armorStand.setVisible(false);
             armorStand.setCustomName(CC.translate(name));
@@ -49,7 +70,7 @@ public class ArmorStandEnum {
         addArmorStand(player, this.name, this.description, this.block, this.sound);
     }
 
-    public ArmorStandEnum(String name, String description, String id, Material block, Sound sound) {
+    public ArmorStandObject(String name, String description, String id, Material block, Sound sound) {
         this.name = name;
         this.description = description;
         this.id = id;
